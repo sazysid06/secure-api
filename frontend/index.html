@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureAPI - Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Signup Form -->
+            <div id="signup-form" class="form">
+                <h2>Sign Up</h2>
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password (min 8 chars)" required>
+                <button onclick="signup()">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+                <div id="signup-message" class="message"></div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="form hidden">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+                <div id="login-message" class="message"></div>
+            </div>
+
+            <!-- Dashboard (after login) -->
+            <div id="dashboard" class="form hidden">
+                <h2>Dashboard</h2>
+                <p>Welcome, <span id="user-name"></span>!</p>
+                <p>Your Role: <span id="user-role"></span></p>
+                <button onclick="fetchMyPosts()">My Posts</button>
+                <button onclick="logout()">Logout</button>
+                <div id="dashboard-message" class="message"></div>
+                <div id="posts-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
